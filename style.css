@@ -286,3 +286,7 @@ footer {
 .footer-social a:hover::after {
     transform: scaleX(1);
 }
+.top h1:hover {
+    transform: scale(1.1); /* Збільшення на 10% */
+    transition: transform 0.3s ease; /* Додає плавний перехід */
+  }
