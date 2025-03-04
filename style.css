@@ -213,3 +213,76 @@ footer {
     background-color: #3e8e41;
     transform: scale(0.95);
 }
+/* Основна секція */
+.vertical-footer {
+    background-color: #d9f99d; /* Світло-зелений фон */
+    padding: 50px 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Контейнер */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Лого */
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3b7d1a; /* Темно-зелений */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Меню навігації та соцмережі */
+.footer-nav,
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Посилання */
+.footer-nav a,
+.footer-social a {
+    color: #355e3b; /* Насичений зелений */
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* Підсвітка лінії при наведенні */
+.footer-nav a::after,
+.footer-social a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #e85483; /* Темно-зелений */
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Ефект наведення */
+.footer-nav a:hover,
+.footer-social a:hover {
+    color: #fbf2f9; /* Темніший зелений */
+}
+
+.footer-nav a:hover::after,
+.footer-social a:hover::after {
+    transform: scaleX(1);
+}
