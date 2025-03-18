@@ -98,3 +98,88 @@ equationButton.addEventListener("click", evaluateEquation); // Кнопка пе
 
 // Початкове відображення сердець при завантаженні сторінки
 updateHealthPointsDisplay();
+
+const arrayOfImages = ["1", "2", "3"];
+
+let galleryImage = 1;
+
+document
+  .getElementById("main-image")
+  .setAttribute("src", `img/gallery/${galleryImage}.jpg`);
+
+document.getElementById("right-arrow").addEventListener("click", () => {
+  galleryImage++;
+  if (galleryImage > arrayOfImages.length) {
+    galleryImage = 1;
+  }
+  document
+    .getElementById("main-image")
+    .setAttribute("src", `img/gallery/${arrayOfImages[galleryImage - 1]}.jpg`);
+    console.log(galleryImage);
+});
+
+document.getElementById("left-arrow").addEventListener("click", () => {
+  galleryImage--;
+  if (galleryImage < 1) {
+    galleryImage = arrayOfImages.length;
+  }
+  document
+    .getElementById("main-image")
+    .setAttribute("src", `img/gallery/${arrayOfImages[galleryImage - 1]}.jpg`);
+});
+
+
+let arrayOfVitamins = [
+  {
+    id: "0",
+    name: "Vitamine A",
+    description: "sjhddbdffssf",
+    image: "",
+    rating:5,
+    type:""
+  } ,
+  {
+    id: "0",
+    name: "Vitamine A",
+    description: "sjhddbdffssf",
+    image: "",
+    rating:5,
+    type:""
+  } ,
+  {
+    id: "0",
+    name: "Vitamine A",
+    description: "sjhddbdffssf",
+    image: "",
+    rating:5,
+    type:""
+  } ,
+  {
+    id: "0",
+    name: "Vitamine A",
+    description: "sjhddbdffssf",
+    image: "",
+    rating:5,
+    type:""
+  } ,
+  {
+    id: "0",
+    name: "Vitamine A",
+    description: "sjhddbdffssf",
+    image: "",
+    rating:5,
+    type:""
+  } 
+]
+
+console.log(arrayOfVitamins);
+
+arrayOfVitamins.forEach((vitamin) =>  {
+  console.log(vitamin);
+
+  let vitaminDiv = document.createElement("div");
+  vitaminDiv.innerText = vitamin.name;
+  vitaminDiv.classList.add("vitamin");
+
+  document.getElementById("p-vitamin").appendChild(vitaminDiv);
+});
