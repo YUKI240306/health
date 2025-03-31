@@ -131,40 +131,40 @@ document.getElementById("left-arrow").addEventListener("click", () => {
 
 let arrayOfVitamins = [
   {
-    id: "0",
-    name: "Vitamine A",
+    id: "1",
+    name: "Vitamine Mg",
+    description: "Magnesium chelate (bisglycinate) is a capsule with a high magnesium content. It is presented in one of the most bioavailable forms as a chelated compound, helping you get the maximum benefit from it.It performs many important functions in the bodyf",
+    image: "",
+    rating:5,
+    type:""
+  } ,
+  {
+    id: "2",
+    name: "Vitamine B",
     description: "sjhddbdffssf",
     image: "",
     rating:5,
     type:""
   } ,
   {
-    id: "0",
-    name: "Vitamine A",
+    id: "3",
+    name: "Vitamine C",
+    description: "sjhddbdffssf",
+    image: "",
+    rating:4,
+    type:""
+  } ,
+  {
+    id: "4",
+    name: "Vitamine D",
     description: "sjhddbdffssf",
     image: "",
     rating:5,
     type:""
   } ,
   {
-    id: "0",
-    name: "Vitamine A",
-    description: "sjhddbdffssf",
-    image: "",
-    rating:5,
-    type:""
-  } ,
-  {
-    id: "0",
-    name: "Vitamine A",
-    description: "sjhddbdffssf",
-    image: "",
-    rating:5,
-    type:""
-  } ,
-  {
-    id: "0",
-    name: "Vitamine A",
+    id: "5",
+    name: "Vitamine AB",
     description: "sjhddbdffssf",
     image: "",
     rating:5,
@@ -182,4 +182,14 @@ arrayOfVitamins.forEach((vitamin) =>  {
   vitaminDiv.classList.add("vitamin");
 
   document.getElementById("p-vitamin").appendChild(vitaminDiv);
+
+  vitaminDiv.innerHTML = `
+        <h3>${vitamin.name}</h3>
+        <img src="img/vitamins/${vitamin.id}.png" alt="#">
+        <p>${vitamin.description}</p>
+        <span>${'💙'.repeat(vitamin.rating) + '🤍'.repeat(5 - vitamin.rating)}</span>
+
+
+  `
 });
+

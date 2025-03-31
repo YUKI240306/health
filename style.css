@@ -318,5 +318,6 @@ footer {
     border-radius: 15px;
     box-shadow: 4px;
     width: 200px;
-    height: 200px;
+    height: 400px;
+    border: 2px solid blue;
 }
