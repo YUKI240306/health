@@ -132,40 +132,40 @@ document.getElementById("left-arrow").addEventListener("click", () => {
 let arrayOfVitamins = [
   {
     id: "1",
-    name: "Vitamine Mg",
-    description: "Magnesium chelate (bisglycinate) is a capsule with a high magnesium content. It is presented in one of the most bioavailable forms as a chelated compound, helping you get the maximum benefit from it.It performs many important functions in the bodyf",
+    name: "Vitamin Mg",
+    description: "Highly absorbable magnesium to support the nervous system and muscles.",
     image: "",
     rating:5,
     type:""
   } ,
   {
     id: "2",
-    name: "Vitamine B",
-    description: "sjhddbdffssf",
+    name: "Vitamin for heart",
+    description: "A complex of beneficial nutrients for heart and vascular health.",
     image: "",
     rating:5,
     type:""
   } ,
   {
     id: "3",
-    name: "Vitamine C",
-    description: "sjhddbdffssf",
+    name: "Vitamin B",
+    description: "Supports energy metabolism and nervous system function.",
     image: "",
     rating:4,
     type:""
   } ,
   {
     id: "4",
-    name: "Vitamine D",
-    description: "sjhddbdffssf",
+    name: "Vitamin E",
+    description: "A powerful antioxidant for skin health and immunity",
     image: "",
-    rating:5,
+    rating:3,
     type:""
   } ,
   {
     id: "5",
-    name: "Vitamine AB",
-    description: "sjhddbdffssf",
+    name: "Vitamin C",
+    description: "Boosts immunity and helps combat stress.",
     image: "",
     rating:5,
     type:""
@@ -187,7 +187,7 @@ arrayOfVitamins.forEach((vitamin) =>  {
         <h3>${vitamin.name}</h3>
         <img src="img/vitamins/${vitamin.id}.png" alt="#">
         <p>${vitamin.description}</p>
-        <span>${'💙'.repeat(vitamin.rating) + '🤍'.repeat(5 - vitamin.rating)}</span>
+        <span>${'💚'.repeat(vitamin.rating) + '🤍'.repeat(5 - vitamin.rating)}</span>
 
 
   `
