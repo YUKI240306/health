@@ -105,7 +105,7 @@ let galleryImage = 1;
 
 document
   .getElementById("main-image")
-  .setAttribute("src", `img/gallery/${galleryImage}.jpg`);
+  .setAttribute("src", `../img/gallery/${galleryImage}.jpg`);
 
 document.getElementById("right-arrow").addEventListener("click", () => {
   galleryImage++;
@@ -114,7 +114,7 @@ document.getElementById("right-arrow").addEventListener("click", () => {
   }
   document
     .getElementById("main-image")
-    .setAttribute("src", `img/gallery/${arrayOfImages[galleryImage - 1]}.jpg`);
+    .setAttribute("src", `../img/gallery/${arrayOfImages[galleryImage - 1]}.jpg`);
     console.log(galleryImage);
 });
 
@@ -125,71 +125,40 @@ document.getElementById("left-arrow").addEventListener("click", () => {
   }
   document
     .getElementById("main-image")
-    .setAttribute("src", `img/gallery/${arrayOfImages[galleryImage - 1]}.jpg`);
+    .setAttribute("src", `../img/gallery/${arrayOfImages[galleryImage - 1]}.jpg`);
 });
 
 
-let arrayOfVitamins = [
-  {
-    id: "1",
-    name: "Vitamin Mg",
-    description: "Highly absorbable magnesium to support the nervous system and muscles.",
-    image: "",
-    rating:5,
-    type:""
-  } ,
-  {
-    id: "2",
-    name: "Vitamin for heart",
-    description: "A complex of beneficial nutrients for heart and vascular health.",
-    image: "",
-    rating:5,
-    type:""
-  } ,
-  {
-    id: "3",
-    name: "Vitamin B",
-    description: "Supports energy metabolism and nervous system function.",
-    image: "",
-    rating:4,
-    type:""
-  } ,
-  {
-    id: "4",
-    name: "Vitamin E",
-    description: "A powerful antioxidant for skin health and immunity",
-    image: "",
-    rating:3,
-    type:""
-  } ,
-  {
-    id: "5",
-    name: "Vitamin C",
-    description: "Boosts immunity and helps combat stress.",
-    image: "",
-    rating:5,
-    type:""
-  } 
-]
 
-console.log(arrayOfVitamins);
 
-arrayOfVitamins.forEach((vitamin) =>  {
-  console.log(vitamin);
 
-  let vitaminDiv = document.createElement("div");
-  vitaminDiv.innerText = vitamin.name;
-  vitaminDiv.classList.add("vitamin");
 
-  document.getElementById("p-vitamin").appendChild(vitaminDiv);
 
-  vitaminDiv.innerHTML = `
-        <h3>${vitamin.name}</h3>
-        <img src="img/vitamins/${vitamin.id}.png" alt="#">
+ 
+
+  fetch('js/vitamins.json')
+  .then((response) => response.json()) // Fixed parentheses
+  .then((data) => {
+    data.forEach((vitamin, index) => { // Fixed arrow function syntax
+      let vitaminDiv = document.createElement("div");
+      vitaminDiv.classList.add("vitamin");
+
+      // Append the vitamin div to the container
+      document.getElementById("p-vitamin").appendChild(vitaminDiv);
+
+      // Populate the vitamin div with content
+      vitaminDiv.innerHTML = `
+        <p>${vitamin.id}</p>
+        <h3>${vitamin.title}</h3>
+        <img src='img/vitamins/${arrayOfImages[index]}.png' alt="${vitamin.title}">
         <p>${vitamin.description}</p>
-        <span>${'💚'.repeat(vitamin.rating) + '🤍'.repeat(5 - vitamin.rating)}</span>
-
-
-  `
-});
-
+        <div> 
+          <p>${"💖".repeat(vitamin.rating) + "🤍".repeat(5 - vitamin.rating)}</p>
+          <p>${vitamin.type}</p> 
+        </div>
+      `;
+    });
+  })
+  .catch((error) => {
+    console.error("Error fetching vitamins data:", error);
+  });

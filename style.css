@@ -16,6 +16,10 @@ header {
     color: white;
 }
 
+.line {
+    color: red;
+}
+
 /* Логотип + текст */
 .logo-container {
     display: flex;
