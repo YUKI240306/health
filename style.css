@@ -340,7 +340,8 @@ footer {
 /* Ефект при наведенні */
 .vitamin:hover {
     transform: translateY(-5px);
-    box-shadow: 3px 3px 12px rgba(0, 128, 0, 0.2);
+    box-shadow: 3px 3px 12px rgba(22, 167, 224, 1);
+    color: rgb(0, 169, 235);
 }
 
 /* Стилізація заголовка */
@@ -357,6 +358,5 @@ footer {
     line-height: 1.5;
     color: #4a6f5d;
 }
-
 
 

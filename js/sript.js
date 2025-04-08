@@ -99,7 +99,7 @@ equationButton.addEventListener("click", evaluateEquation); // Кнопка пе
 // Початкове відображення сердець при завантаженні сторінки
 updateHealthPointsDisplay();
 
-const arrayOfImages = ["1", "2", "3"];
+const arrayOfImages = ["1", "2", "3", "4", "5"];
 
 let galleryImage = 1;
 
@@ -129,13 +129,6 @@ document.getElementById("left-arrow").addEventListener("click", () => {
 });
 
 
-
-
-
-
-
- 
-
   fetch('js/vitamins.json')
   .then((response) => response.json()) // Fixed parentheses
   .then((data) => {
@@ -149,8 +142,8 @@ document.getElementById("left-arrow").addEventListener("click", () => {
       // Populate the vitamin div with content
       vitaminDiv.innerHTML = `
         <p>${vitamin.id}</p>
-        <h3>${vitamin.title}</h3>
-        <img src='img/vitamins/${arrayOfImages[index]}.png' alt="${vitamin.title}">
+        <h3>${vitamin.name}</h3>
+        <img src='img/vitamins/${arrayOfImages[index]}.png' alt="${vitamin.name}" onerror="this.onerror=null; this.src='img/vitamins/1.png';">
         <p>${vitamin.description}</p>
         <div> 
           <p>${"💖".repeat(vitamin.rating) + "🤍".repeat(5 - vitamin.rating)}</p>
